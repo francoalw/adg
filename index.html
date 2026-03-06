@@ -4,6 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DABP ONLINE</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#1a56db',        // Azul padrão Flowbite
+                        'brand-strong': '#1e42af', // Azul mais escuro no hover
+                        'brand-medium': '#3b82f6', // Cor do anel de foco
+                    },
+                    borderRadius: {
+                        'base': '0.5rem',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agentes da Guardabeira</title>
     <style>
         :root {
@@ -58,7 +85,44 @@
         }
 
         .agent-container {
-            padding: 30px;
+            padding: 5%;
+        }
+
+        .gov-header {
+            justify-content: space-between;
+            /* Empurra o conteúdo para as extremidades */
+            background: var(--police-blue);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 4px solid var(--absalom-gold);
+        }
+
+        .header-main-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            /* Espaço entre a logo e o texto */
+        }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .header-text p {
+            margin: 5px 0 0 0;
+            color: var(--absalom-gold);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .main-grid {
+            display: grid;
+            width: 100%;
         }
 
         .missao-box {
@@ -92,85 +156,42 @@
             background: rgba(255, 255, 255, 0.8);
         }
 
-        /* BARRA DO GOVERNO (TOP) */
-        .gov-header {
-            background: var(--police-blue);
-            color: white;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            border-bottom: 4px solid var(--absalom-gold);
-        }
-
-        .header-text h1 {
-            margin: 0;
-            font-size: 1.8rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .header-text p {
-            margin: 5px 0 0 0;
-            color: var(--absalom-gold);
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        .main-grid {
-            display: grid;
-            width: 100%;
-        }
-
-        .pj-card {
-            background: #fff;
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-            position: relative;
-            /* Adicione estas linhas abaixo */
-            transition: all 0.3s ease-in-out;
-            border-radius: 8px;
-            /* Cantos arredondados deixam o visual mais moderno */
-        }
-
-        .pj-card:hover {
-            transform: translateY(-5px);
-            /* Sobe o card levemente */
-            box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.15);
-            /* Sombra mais profunda */
-            border-color: #007bff;
-            /* Muda a cor da borda para destacar */
-        }
-
-        /* O Container que segura os 5 cards */
-        .roster {
-            display: flex;
-            flex-direction: row;
-            /* Força a ficar em linha */
-            justify-content: space-around;
-            /* Espalha os cards igualmente */
-            align-items: flex-start;
-            gap: 15px;
-            /* Espaço entre cada ficha de agente */
-            width: 100%;
-            padding: 20px 0;
-            overflow-x: auto;
-            /* Se a tela for muito pequena, cria uma barra de rolagem em vez de quebrar a linha */
-        }
-
         /* Ajuste individual do card do personagem */
         .pj-card {
+            /* Layout Flexbox */
             flex: 1;
-            /* Faz com que todos os 5 tenham a mesma largura exata */
-            min-width: 120px;
-            /* Impede que fiquem esmagados demais */
-            text-align: center;
-            background: rgba(255, 255, 255, 0.7);
-            /* Papel de ficha técnica */
+            /* Um pouco mais largo para o texto respirar */
+            position: relative;
+
+            /* Estética de Pergaminho Real (Medieval) */
+            background: #fdf5e6;
+            /* Cor 'Old Lace' - papel envelhecido */
+            background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(220, 190, 150, 0.2));
+
+            /* Borda de Decreto: Dupla e com cor de ouro velho */
+            border: 3px double #8b4513;
+
             padding: 10px;
-            border: 1px solid #bc9a70;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+
+            /* Sombra de documento pesado sobre a mesa */
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(139, 69, 19, 0.05);
+
+            /* Transição suave ao passar o mouse (foco do oficial) */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+            /* Cursor de 'inspeção' */
+            cursor: grayscale;
+        min-width: 170px;           /* Não deixa ficar menor que isso */
+    max-width: 170px;           /* Não deixa ficar gigante em telas grandes */
+}
+
+        /* Efeito de destaque ao passar o mouse */
+        .pj-card:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.3);
+            border-color: #bc9a70;
+            /* Brilho dourado ao 'analisar' o documento */
         }
 
         /* Garante que a foto do agente se ajuste ao card */
@@ -194,16 +215,49 @@
         }
 
         .pj-name {
-            font-weight: bold;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-            margin-top: 8px;
+            /* Identificação Nominal Obrigatória */
+            font-family: 'Courier New', Courier, monospace;
+            /* Fonte de máquina de escrever/processo */
+            font-weight: 900;
+            /* Negrito extra para destaque de registro */
+            font-size: 0.85em;
+            /* Ligeiramente menor, como em formulários oficiais */
+            letter-spacing: 0.05em;
+            /* Espaçamento autoritário entre caracteres */
+            text-transform: uppercase;
+            /* Todo oficial de justiça escreve nomes em MAIÚSCULAS */
+
+            /* Alinhamento de Protocolo */
+            margin-top: 10px;
+            padding-top: 4px;
+            border-top: 1px double #bc9a70;
+            /* Uma linha fina de separação, como em assinaturas */
+
+            color: #2d2d2d;
+            /* Cor de tinta de fita de máquina (quase preto) */
+            display: block;
+            /* Garante que o nome ocupe sua própria linha de registro */
         }
 
         .pj-status {
             font-size: 0.7em;
             color: #555;
             text-transform: uppercase;
+        }
+
+        /* O Container que segura os 5 cards */
+        .roster {
+            display: flex;
+            flex-direction: row;
+            /* Força a ficar em linha */
+            justify-content: space-around;
+            /* Espalha os cards igualmente */
+            align-items: flex-start;
+            gap: 15px;
+            /* Espaço entre cada ficha de agente */
+            width: 100%;
+            padding: 20px 0;
+            overflow-x: auto;
         }
 
         .section-title {
@@ -262,11 +316,12 @@
             padding: 40px;
             margin: 20px auto;
             width: 90%;
-            max-width: 800px;
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
             font-family: 'Georgia', serif;
             position: relative;
             box-sizing: border-box;
+            margin-left: 5%;
+            margin-right: 5%;
         }
 
         .vigintilogo:hover {
@@ -378,18 +433,23 @@
 <body>
     <div class="gov-portal">
         <header class="gov-header">
-            <img src="https://www.pathfinder-fr.org/wiki/public/upload/%2FPCUP%2FNation-PNG%2FAbsalom.png"
-                alt="Brasão de Absalom" class="absalom-logo">
-            <div class="header-text">
-                <h1>Prefeitura de Absalom</h1>
-                <p>DABP | DEPARTAMENTO DE AGENTES DO BAIRRO DO PRECIPÍCIO</p>
+            <div class="header-main-content">
+                <img src="https://www.pathfinder-fr.org/wiki/public/upload/%2FPCUP%2FNation-PNG%2FAbsalom.png"
+                    alt="Brasão de Absalom" class="absalom-logo">
+                <div class="header-text">
+                    <h1>Prefeitura de Absalom</h1>
+                    <p>DABP | DEPARTAMENTO DE AGENTES DO BAIRRO DO PRECIPÍCIO</p>
+                </div>
             </div>
+
+            <button type="button" class="text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">Secondary</button>
+
         </header>
 
         <div class="agent-container">
 
             <div class="section-title">
-                <h2>👤 Oficiais Registrados</h2>
+                <h2>👤 OFICIAIS REGISTRADOS</h2>
                 <small>Protocolo: ADG-1500/AR</small>
             </div>
 
@@ -408,19 +468,19 @@
 
                 <div class="pj-card">
                     <img src="RhaanaDeepoak.jpeg" alt="Agente" class="pj-photo">
-                    <div class="pj-name">Rhaana Deepoak</div>
+                    <div class="pj-name">Rhaana</div>
                     <div class="pj-status">Tripkee ● Druida</div>
                 </div>
 
                 <div class="pj-card">
                     <img src="Rutílio.jpeg" alt="Agente" class="pj-photo">
-                    <div class="pj-name">Rutílio Argent</div>
+                    <div class="pj-name">Rutílio</div>
                     <div class="pj-status">Gnomo ● Kineticista</div>
                 </div>
 
                 <div class="pj-card">
                     <img src="viridiana.jpeg" alt="Agente" class="pj-photo">
-                    <div class="pj-name">Viridiana Sovari</div>
+                    <div class="pj-name">Viridiana</div>
                     <div class="pj-status">Humana ● Guerreira</div>
                 </div>
             </section>
@@ -428,7 +488,7 @@
 
         <div class="main-grid">
             <div class="casos">
-                <h2>&nbsp;&nbsp;&nbsp;📂 Casos em Aberto</h2>
+                <h2>&nbsp;&nbsp;&nbsp;📂 CASOS EM ABERTO</h2>
 
                 <div class="missao-box">
                     <span class="stamp-media">PRIORIDADE MEDIA</span>
