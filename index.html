@@ -309,93 +309,6 @@
             transition: all 0.2s ease;
         }
 
-        .vigintilogo {
-            background-color: #fdfaf3;
-            /* Papel oficial levemente amarelado */
-            border: 1px solid #c0c0c0;
-            border-left: 15px solid #2c3e50;
-            /* Faixa lateral de encadernação oficial */
-            padding: 40px;
-            margin: 20px auto;
-            width: 90%;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-            font-family: 'Georgia', serif;
-            position: relative;
-            box-sizing: border-box;
-            margin-left: 5%;
-            margin-right: 5%;
-        }
-
-        .vigintilogo:hover {
-            /* Deslocamento mínimo para um "respiro" elegante */
-            transform: translateY(-7px);
-
-            /* Sombra mais curta e muito mais transparente */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-
-            /* Fundo sutilmente mais sólido */
-            background: rgba(255, 255, 255, 0.9);
-
-            /* Suaviza o retorno ao estado original ao tirar o mouse */
-            transition: all 0.2s ease-in-out;
-        }
-
-        /* Título estilo Decreto Real */
-        .vigintilogo h2 {
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #1a1a1a;
-            border-bottom: 2px double #2c3e50;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-            font-size: 1.4rem;
-        }
-
-        /* Configuração da Lista de Artigos */
-        .vigintilogo ul {
-            list-style-type: none;
-            /* Remove as bolinhas padrão */
-            padding-left: 0;
-            counter-reset: artigo;
-            /* Inicia o contador de artigos */
-        }
-
-        .vigintilogo li {
-            margin-bottom: 25px;
-            line-height: 1.6;
-            text-align: justify;
-            color: #333;
-            position: relative;
-            padding-left: 100px;
-            /* Abre espaço para o rótulo "Art. I" */
-        }
-
-        /* Gerador automático de numeração: Art. I, Art. II, etc. */
-        .vigintilogo li::before {
-            counter-increment: artigo;
-            content: "Art. " counter(artigo, upper-roman) ".";
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-            color: #8b0000;
-            /* Vermelho carimbo/lacre */
-            font-variant: small-caps;
-        }
-
-        /* Marca d'água sutil de fundo */
-        .vigintilogo::after {
-            content: "OFICIAL";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-45deg);
-            font-size: 5rem;
-            color: rgba(0, 0, 0, 0.03);
-            pointer-events: none;
-            z-index: 0;
-        }
-
         body {
             background-color: #1a1a1a;
             background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png');
@@ -516,25 +429,6 @@
                     <p>Alguns criminosos podem utilizar o festival para cometer crimes, vão ao local averiguar e
                         garantir a paz.</p>
                 </div>
-            </div>
-        </div>
-
-        <div class="main-grid">
-
-            <div class="vigintilogo">
-                <h2>📜 Vigintílogo dos Guardabeira</h2>
-                <ul style="font-size: 0.9rem; padding-left: 20px;">
-                    <li>Fica estabelecido, sob a autoridade do Vigintílogo, que toda e qualquer carga de madeira
-                        está proibida de cruzar as fronteiras, salvo aquelas com procedência certificada do
-                        Consórcio Kortos, de Otari, conferindo-se ainda aos oficiais de guarda o poder
-                        discricionário de arbitrar, no ato da autuação e conforme seu próprio critério, o valor
-                        pecuniário de qualquer multa aplicada aos infratores.</li>
-                    <li>É terminantemente vedado o uso de força desproporcional ou desnecessária no exercício das
-                        funções de guarda, sujeitando-se o infrator às penas disciplinares previstas neste Código.</li>
-                    <li>Fica decretado o monopólio comercial sobre o ingresso de recursos florestais em Absalom, sendo
-                        admitida, exclusivamente, a madeira de procedência certificada do Consórcio de Madeira Kortos,
-                        sediado em Otari. Qualquer material de origem distinta será sumariamente confiscado.</li>
-                </ul>
             </div>
         </div>
 
