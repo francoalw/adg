@@ -355,10 +355,9 @@
                     <h1>Prefeitura de Absalom</h1>
                     <p>DABP | DEPARTAMENTO DE AGENTES DO BAIRRO DO PRECIPÍCIO</p>
                 </div>
-            </div>
-            <button id="btnBaixarPdfs" type="button"
+            </div><button id="btnBaixarPdfs" type="button" onclick="window.open('https://drive.google.com/drive/folders/1Ah1bMWPILq7EiheeumfyIVJ-mzF_Komo?usp=sharing', '_blank')"
                 class="text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
-                Baixar Documentos Importantes
+                Documentos Importantes
             </button>
         </header>
 
@@ -437,29 +436,6 @@
             <i>Acesso via Intranet Mágica Protegida.</i>
         </footer>
     </div>
-
-    <script>
-document.getElementById('btnBaixarPdfs').addEventListener('click', function() {
-    // Liste aqui os caminhos dos seus PDFs
-    const arquivos = [
-        'Crime e Lei.pdf',
-        'Agentes da Guardabeira Guia do Jogador.pdf'
-    ];
-
-    arquivos.forEach((url, index) => {
-        // Usamos um pequeno atraso (timeout) para o navegador não bloquear os downloads simultâneos
-        setTimeout(() => {
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = url.split('/').pop(); // Define o nome do arquivo baseado na URL
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }, index * 500); // Espera 0.5s entre cada download
-    });
-});
-</script>
-
 </body>
 
 </html>
