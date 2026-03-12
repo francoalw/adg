@@ -182,9 +182,11 @@
 
             /* Cursor de 'inspeção' */
             cursor: grayscale;
-        min-width: 170px;           /* Não deixa ficar menor que isso */
-    max-width: 170px;           /* Não deixa ficar gigante em telas grandes */
-}
+            min-width: 170px;
+            /* Não deixa ficar menor que isso */
+            max-width: 170px;
+            /* Não deixa ficar gigante em telas grandes */
+        }
 
         /* Efeito de destaque ao passar o mouse */
         .pj-card:hover {
@@ -441,9 +443,10 @@
                     <p>DABP | DEPARTAMENTO DE AGENTES DO BAIRRO DO PRECIPÍCIO</p>
                 </div>
             </div>
-
-            <button type="button" class="text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">Secondary</button>
-
+            <button id="btnBaixarPdfs" type="button"
+                class="text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+                Baixar Documentos Importantes
+            </button>
         </header>
 
         <div class="agent-container">
@@ -499,6 +502,14 @@
                 </div>
 
                 <div class="missao-box">
+                    <span class="stamp-media">PRIORIDADE MEDIA</span>
+                    <h3>Averiguar Cobrança Indevida de Pedágios</h3>
+                    <p><b>Relator:</b> Belfruta Samambaia</p>
+                    <p>Um grupo de baderneiros está causando confusão há dias no local. Vão ao recinto, apasiguar a
+                        situação de uma vez por todas.</p>
+                </div>
+
+                <div class="missao-box">
                     <span class="stamp-baixa">PRIORIDADE BAIXA</span>
                     <h3>Fazer ronda no FESTIVAL RADIANTE</h3>
                     <p><b>Relator:</b> Tentente Lavarsus</p>
@@ -532,6 +543,28 @@
             <i>Acesso via Intranet Mágica Protegida.</i>
         </footer>
     </div>
+
+    <script>
+document.getElementById('btnBaixarPdfs').addEventListener('click', function() {
+    // Liste aqui os caminhos dos seus PDFs
+    const arquivos = [
+        'Crime e Lei.pdf',
+        'Agentes da Guardabeira Guia do Jogador.pdf'
+    ];
+
+    arquivos.forEach((url, index) => {
+        // Usamos um pequeno atraso (timeout) para o navegador não bloquear os downloads simultâneos
+        setTimeout(() => {
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = url.split('/').pop(); // Define o nome do arquivo baseado na URL
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }, index * 500); // Espera 0.5s entre cada download
+    });
+});
+</script>
 
 </body>
 
