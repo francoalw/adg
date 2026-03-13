@@ -40,6 +40,7 @@
             --police-blue: #1a2a40;
             --absalom-gold: #c5a059;
             --altapri: #ff0000;
+            --feitapri: #39ff14;
             --mediapri: #f5b031;
             --baixapri: #00ff80;
             --folder-tan: #d2b48c;
@@ -283,6 +284,19 @@
             transition: all 0.2s ease;
         }
 
+                .stamp-feita {
+            float: right;
+            border: 3px solid var(--feitapri);
+            color: var(--feitapri);
+            padding: 5px;
+            transform: rotate(15deg);
+            font-weight: bold;
+            font-size: 0.8rem;
+            /* Sombra mais opaca, porém mais curta e nítida */
+            box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
+        }
+
         .stamp-media {
             float: right;
             border: 3px solid var(--mediapri);
@@ -406,7 +420,7 @@
                 <h2>&nbsp;&nbsp;&nbsp;📂 CASOS EM ABERTO</h2>
 
                 <div class="missao-box">
-                    <span class="stamp-media">PRIORIDADE MEDIA</span>
+                    <span class="stamp-feita">CONCLUÍDA</span>
                     <h3>Confusão na taberna TENGU EMBRIAGADO</h3>
                     <p><b>Relator:</b> Belfruta Samambaia</p>
                     <p>Um grupo de baderneiros está causando confusão há dias no local. Vão ao recinto, apasiguar a
@@ -439,3 +453,4 @@
 </body>
 
 </html>
+
