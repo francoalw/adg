@@ -15,9 +15,9 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: '#1a56db',        // Azul padrão Flowbite
-                        'brand-strong': '#1e42af', // Azul mais escuro no hover
-                        'brand-medium': '#3b82f6', // Cor do anel de foco
+                        brand: '#1a56db',
+                        'brand-strong': '#1e42af',
+                        'brand-medium': '#3b82f6',
                     },
                     borderRadius: {
                         'base': '0.5rem',
@@ -86,10 +86,9 @@
 
         .casos-open-title{
             border-bottom: 2px solid var(--police-blue);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             margin-bottom: 20px;
+            margin-left: 5%;
+            margin-right: 5%;
         }
 
         .gov-header {
@@ -125,8 +124,7 @@
         }
 
         .main-grid {
-            display: grid;
-            width: 90%;
+            width: 100%;
         }
 
         .missao-box {
@@ -319,7 +317,7 @@
         }
 
         body {
-            background-color: #1a1a1a;
+            background-color:#1a1a1a;
             background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png');
             color: var(--ink);
             font-family: 'Times New Roman', Times, serif;
@@ -411,7 +409,6 @@
         </div>
 
         <div class="main-grid">
-            <div class="casos">
                 <div class="casos-open-title">
                     <h2>🚨 CASOS EM ABERTO</h2>
                 </div>
@@ -439,7 +436,36 @@
                     <p>Alguns criminosos podem utilizar o festival para cometer crimes, vão ao local averiguar e
                         garantir a paz.</p>
                 </div>
-            </div>
+        </div>
+
+        <div class="main-grid">
+                <div class="casos-open-title"> <style>background-green</style>
+                    <h2>🚨 CASOS ENCERRADOS</h2>
+                </div>
+
+                <div class="missao-box">
+                    <span class="stamp-feita">CONCLUÍDA</span>
+                    <h3>Confusão na taberna TENGU EMBRIAGADO</h3>
+                    <p><b>Relator:</b> Belfruta Samambaia</p>
+                    <p>Um grupo de baderneiros está causando confusão há dias no local. Vão ao recinto, apasiguar a
+                        situação de uma vez por todas.</p>
+                </div>
+
+                <div class="missao-box">
+                    <span class="stamp-media">PRIORIDADE MEDIA</span>
+                    <h3>Averiguar Cobrança Indevida de Pedágios</h3>
+                    <p><b>Relator:</b> Belfruta Samambaia</p>
+                    <p>Um grupo de baderneiros está causando confusão há dias no local. Vão ao recinto, apasiguar a
+                        situação de uma vez por todas.</p>
+                </div>
+
+                <div class="missao-box">
+                    <span class="stamp-baixa">PRIORIDADE BAIXA</span>
+                    <h3>Fazer ronda no FESTIVAL RADIANTE</h3>
+                    <p><b>Relator:</b> Tentente Lavarsus</p>
+                    <p>Alguns criminosos podem utilizar o festival para cometer crimes, vão ao local averiguar e
+                        garantir a paz.</p>
+                </div>
         </div>
 
         <footer>
