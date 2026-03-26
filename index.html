@@ -160,81 +160,47 @@
 
         /* Ajuste individual do card do personagem */
         .pj-card {
-            /* Layout Flexbox */
             flex: 1;
-            /* Um pouco mais largo para o texto respirar */
             position: relative;
-
-            /* Estética de Pergaminho Real (Medieval) */
             background: #fdf5e6;
-            /* Cor 'Old Lace' - papel envelhecido */
             background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(220, 190, 150, 0.2));
-
-            /* Borda de Decreto: Dupla e com cor de ouro velho */
             border: 3px double #8b4513;
-
             padding: 10px;
             text-align: center;
-
-            /* Sombra de documento pesado sobre a mesa */
             box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(139, 69, 19, 0.05);
-
-            /* Transição suave ao passar o mouse (foco do oficial) */
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-
-            /* Cursor de 'inspeção' */
             cursor: grayscale;
         }
 
         /* Efeito de translucidez ao passar o mouse */
         .pj-card:hover {
             opacity: 0.7;
-            /* Ajuste entre 0 (invisível) e 1 (opaco) */
         }
 
-        /* Garante que a foto do agente se ajuste ao card */
+
         .pj-photo {
-            /* Define um tamanho fixo para todas */
             width: 100px;
             height: 100px;
-
-            /* O segredo para não deformar a imagem */
             object-fit: cover;
             object-position: top;
-            /* Foca no topo da imagem (geralmente onde está o rosto) */
-
             border-radius: 4px;
             filter: sepia(0.3);
             border: 2px solid #333;
-
-            /* Garante que o navegador trate a imagem como um bloco */
             display: block;
             margin: 0 auto;
         }
 
         .pj-name {
-            /* Identificação Nominal Obrigatória */
             font-family: 'Courier New', Courier, monospace;
-            /* Fonte de máquina de escrever/processo */
             font-weight: 900;
-            /* Negrito extra para destaque de registro */
             font-size: 0.85em;
-            /* Ligeiramente menor, como em formulários oficiais */
             letter-spacing: 0.05em;
-            /* Espaçamento autoritário entre caracteres */
             text-transform: uppercase;
-            /* Todo oficial de justiça escreve nomes em MAIÚSCULAS */
-
-            /* Alinhamento de Protocolo */
             margin-top: 10px;
             padding-top: 4px;
             border-top: 1px double #bc9a70;
-            /* Uma linha fina de separação, como em assinaturas */
-
             color: #2d2d2d;
-            /* Cor de tinta de fita de máquina (quase preto) */
-            display: block;
-            /* Garante que o nome ocupe sua própria linha de registro */
+            display: block;/
         }
 
         .pj-status {
