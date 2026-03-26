@@ -43,9 +43,7 @@
             --mediapri: #f5b031;
             --baixapri: #00ff80;
             --folder-tan: #d2b48c;
-            /* Cor de pasta de arquivo */
             --paper-white: #fdfcf0;
-            /* Papel envelhecido */
             --stamp-red: #8b0000;
 
         }
@@ -66,7 +64,6 @@
             width: 70%;
             min-height: 980px;
             padding: 0;
-            /* Removido para o header ocupar tudo */
             box-shadow: 0 0 60px rgba(0, 0, 0, 0.9);
             position: relative;
             background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
@@ -76,7 +73,6 @@
         .absalom-logo {
             height: 100px;
             margin-right: 25px;
-            /* Aplicamos a animação chamada 'brilhoMagico' */
             animation: brilhoMagico 3s infinite ease-in-out;
         }
 
@@ -93,7 +89,6 @@
 
         .gov-header {
             justify-content: space-between;
-            /* Empurra o conteúdo para as extremidades */
             background: var(--police-blue);
             color: white;
             padding: 20px;
@@ -106,7 +101,6 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            /* Espaço entre a logo e o texto */
         }
 
         .header-text h1 {
@@ -135,30 +129,18 @@
             margin-bottom: 20px;
             margin-left: 5%;
             margin-right: 5%;
-
             border-radius: 8px;
-
-            /* 1. Suaviza a transição do movimento e da sombra */
             transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 box-shadow 0.3s ease;
-
-            /* Sombra inicial bem discreta */
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        /* 2. Efeito ao passar o mouse (Hover) */
         .missao-box:hover {
-            /* Sobe um pouco (5px) para não desalinhar tanto o layout */
             transform: translateY(-5px);
-
-            /* Sombra mais profunda e suave para simular altura */
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-
-            /* Opcional: deixa o fundo um pouco menos transparente ao focar */
             background: rgba(255, 255, 255, 0.8);
         }
 
-        /* Ajuste individual do card do personagem */
         .pj-card {
             flex: 1;
             position: relative;
@@ -170,11 +152,11 @@
             box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(139, 69, 19, 0.05);
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
             cursor: grayscale;
+            transition: opacity 0.3s ease-in-out;
         }
 
-        /* Efeito de translucidez ao passar o mouse */
         .pj-card:hover {
-            opacity: 0.7;
+            opacity: 0.5;
         }
 
 
@@ -209,13 +191,10 @@
             text-transform: uppercase;
         }
 
-        /* O Container que segura os 5 cards */
         .roster {
             display: flex;
             flex-direction: row;
-            /* Força a ficar em linha */
             justify-content: space-around;
-            /* Espalha os cards igualmente */
             align-items: flex-start;
             gap: 15px;
             padding: 20px 0;
@@ -238,7 +217,6 @@
             transform: rotate(15deg);
             font-weight: bold;
             font-size: 0.8rem;
-            /* Sombra mais opaca, porém mais curta e nítida */
             box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
             transition: all 0.2s ease;
         }
@@ -251,7 +229,6 @@
             transform: rotate(15deg);
             font-weight: bold;
             font-size: 0.8rem;
-            /* Sombra mais opaca, porém mais curta e nítida */
             box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
             transition: all 0.2s ease;
         }
@@ -264,7 +241,6 @@
             transform: rotate(15deg);
             font-weight: bold;
             font-size: 0.8rem;
-            /* Sombra mais opaca, porém mais curta e nítida */
             box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
             transition: all 0.2s ease;
         }
@@ -277,7 +253,6 @@
             transform: rotate(15deg);
             font-weight: bold;
             font-size: 0.8rem;
-            /* Sombra mais opaca, porém mais curta e nítida */
             box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
             transition: all 0.2s ease;
         }
@@ -305,12 +280,10 @@
 
             0%,
             100% {
-                /* Brilho suave inicial (branco azulado) */
                 filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.4));
             }
 
             50% {
-                /* Brilho intenso no meio da animação (pode trocar a cor aqui) */
                 filter: drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.8)) drop-shadow(0px 0px 10px rgba(100, 200, 255, 0.5));
             }
         }
