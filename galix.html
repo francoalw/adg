@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentes da Guardabeira</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#1a56db',
+                        'brand-strong': '#1e42af',
+                        'brand-medium': '#3b82f6',
+                    },
+                    borderRadius: {
+                        'base': '0.5rem',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentes da Guardabeira</title>
+    <style>
+        :root {
+            --paper: #ff0000;
+            --ink: #2c2c2c;
+            --police-blue: #1a2a40;
+            --absalom-gold: #c5a059;
+            --altapri: #ff0000;
+            --goblingreen: #135308;
+            --feitapri: #39ff14;
+            --mediapri: #f5b031;
+            --baixapri: #00ff80;
+            --folder-tan: #d2b48c;
+            --paper-white: #fdfcf0;
+            --stamp-red: #8b0000;
+
+        }
+
+        .content-left {
+            margin: auto;
+        }
+
+        .casos {
+            margin: auto;
+            width: 100%;
+            display: block;
+            float: none;
+        }
+
+        .goblin-portal {
+            background-color: var(--paper);
+            width: 70%;
+            min-height: 980px;
+            padding: 0;
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.9);
+            position: relative;
+            border: 2px solid #333;
+        }
+
+        .absalom-logo {
+            height: 100px;
+            margin-right: 25px;
+            animation: brilhoMagico 3s infinite ease-in-out;
+        }
+
+        .agent-container {
+            padding: 5%;
+        }
+
+        .casos-open-title {
+            border-bottom: 2px solid var(--police-blue);
+            margin-bottom: 20px;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        .galix-header {
+            justify-content: space-between;
+            background: var(--goblingreen);
+            color: rgb(255, 255, 255);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 4px solid var(--absalom-gold);
+        }
+
+        .header-main-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .header-text p {
+            margin: 5px 0 0 0;
+            color: var(--absalom-gold);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .main-grid {
+            width: 100%;
+        }
+
+        .missao-box {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid #b8860b77;
+            padding: 20px;
+            border-left: 5px solid var(--police-blue);
+            margin-bottom: 20px;
+            margin-left: 5%;
+            margin-right: 5%;
+            border-radius: 8px;
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.3s ease;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .missao-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .pj-card {
+            flex: 1;
+            position: relative;
+            background: #fdf5e6;
+            background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(220, 190, 150, 0.2));
+            border: 3px double #8b4513;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(139, 69, 19, 0.05);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            cursor: grayscale;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .pj-card:hover {
+            opacity: 0.5;
+        }
+
+
+        .pj-photo {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 4px;
+            filter: sepia(0.3);
+            border: 2px solid #333;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .pj-name {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 900;
+            font-size: 0.85em;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-top: 10px;
+            padding-top: 4px;
+            border-top: 1px double #bc9a70;
+            color: #2d2d2d;
+            display: block;/
+        }
+
+        .pj-status {
+            font-size: 0.7em;
+            color: #555;
+            text-transform: uppercase;
+        }
+
+        .roster {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px 0;
+            overflow-x: auto;
+        }
+
+        .section-title {
+            border-bottom: 2px solid var(--police-blue);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .stamp-alta {
+            float: right;
+            border: 3px solid var(--altapri);
+            color: var(--stamp-red);
+            padding: 5px;
+            transform: rotate(15deg);
+            font-weight: bold;
+            font-size: 0.8rem;
+            box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .stamp-feita {
+            float: right;
+            border: 3px solid var(--feitapri);
+            color: var(--feitapri);
+            padding: 5px;
+            transform: rotate(15deg);
+            font-weight: bold;
+            font-size: 0.8rem;
+            box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .stamp-media {
+            float: right;
+            border: 3px solid var(--mediapri);
+            color: var(--mediapri);
+            padding: 5px;
+            transform: rotate(15deg);
+            font-weight: bold;
+            font-size: 0.8rem;
+            box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .stamp-baixa {
+            float: right;
+            border: 3px solid var(--baixapri);
+            color: var(--baixapri);
+            padding: 5px;
+            transform: rotate(15deg);
+            font-weight: bold;
+            font-size: 0.8rem;
+            box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png');
+            color: var(--ink);
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer {
+            background: #2c2c2c;
+            color: #999;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+
+        @keyframes brilhoMagico {
+
+            0%,
+            100% {
+                filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.4));
+            }
+
+            50% {
+                filter: drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.8)) drop-shadow(0px 0px 10px rgba(100, 200, 255, 0.5));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="goblin-portal">
+        <header class="galix-header">
+            <div class="header-main-content">
+                <img src="https://wow.zamimg.com/modelviewer/live/webthumbs/npc/210/75730.png" alt="Brasão de Absalom"
+                    class="absalom-logo">
+                <div class="header-text">
+                    <h1>Banco de Dados do Galix</h1>
+                    <p>CV | COMANDO VERDE</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="agent-container">
+
+            <div class="section-title">
+                <h2><strong>👤 NOVOS GOBLINS</strong></h2>
+                <small>TODOS PELO GALIX</small>
+            </div>
+
+            <section class="roster">
+                <div class="pj-card">
+                    <img src="Dewis.jpg" alt="Agente" class="pj-photo">
+                    <div class="pj-name">Dewis</div>
+                    <div class="pj-status">Gnomo ● Dewis</div>
+                </div>
+
+                <div class="pj-card">
+                    <img src="Grigori.jpg" alt="Agente" class="pj-photo">
+                    <div class="pj-name">Grigori</div>
+                    <div class="pj-status">Anão ● Ranger</div>
+                </div>
+
+                <div class="pj-card">
+                    <img src="RhaanaDeepoak.jpeg" alt="Agente" class="pj-photo">
+                    <div class="pj-name">Rhaana</div>
+                    <div class="pj-status">Tripkee ● Druida</div>
+                </div>
+
+                <div class="pj-card">
+                    <img src="Rutílio.jpeg" alt="Agente" class="pj-photo">
+                    <div class="pj-name">Rutílio</div>
+                    <div class="pj-status">Gnomo ● Kineticista</div>
+                </div>
+
+                <div class="pj-card">
+                    <img src="viridiana.jpeg" alt="Agente" class="pj-photo">
+                    <div class="pj-name">Viridiana</div>
+                    <div class="pj-status">Humana ● Guerreira</div>
+                </div>
+            </section>
+        </div>
+
+        <div class="main-grid">
+            <div class="casos-open-title">
+                <h2><strong>🚩MISSÕES DE GALIX</strong></h2>
+            </div>
+
+            <div class="missao-box">
+                <span class="stamp-alta">PRIORIDADE ALTA</span>
+                <h3><strong>EM BUSCA DO CINTURÃO DE GALIX</strong></h3>
+                <p><b>Combates Vencidos:</b></p>
+                <ul class="max-w-md space-y-1 text-body list-disc list-inside">
+                    <li>
+                        01 Cocatriz
+                    </li>
+                    <li>
+                        Rashmud
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="main-grid">
+                <div class="casos-open-title">
+                    <h2>📁 CASOS ENCERRADOS</h2>
+                </div>
+
+                <div class="missao-box">
+                    <h3>CONFUSÃO NA TABERNA TENGU EMBRIAGADO</h3>
+                    <p><b>Relator:</b> Belfruta Samambaia</p>
+                    <p>Um grupo de baderneiros está causando confusão há dias no local. Vão ao recinto, apasiguar a
+                        situação de uma vez por todas.</p>
+                </div>
+
+                <div class="missao-box">
+                    <h3>AVERIGUAR PEDÁGIO INDEVIDO</h3>
+                    <p><b>Relator:</b> Belfruta Samambaia</p>
+                    <p>Um grupo de baderneiros está causando confusão há dias no local. Vão ao recinto, apasiguar a
+                        situação de uma vez por todas.</p>
+                </div>
+            </div>
+
+            <footer>
+                © 4724 AR - PROGRAMEI MEDIANTE AMEAÇA ALGUEM ME AJUDA<br>
+            </footer>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
+        <script>
+            let buffer = "";
+            const keyword = "galix";
+
+            document.addEventListener('keydown', (e) => {
+                // Adiciona a tecla pressionada ao buffer
+                buffer += e.key.toLowerCase();
+
+                // Mantém o buffer apenas com o tamanho da palavra-chave para economizar memória
+                if (buffer.length > keyword.length) {
+                    buffer = buffer.substring(buffer.length - keyword.length);
+                }
+
+                // Verifica se a palavra digitada é "galix"
+                if (buffer === keyword) {
+                    const currentUrl = window.location.href;
+
+                    // Lógica de Redirecionamento
+                    if (currentUrl.includes("galix.html")) {
+                        window.location.href = "index.html"; // Volta para a principal
+                    } else {
+                        window.location.href = "galix.html"; // Vai para a secreta
+                    }
+
+                    // Limpa o buffer após o acerto
+                    buffer = "";
+                }
+            });
+        </script>
+</body>
+
+</html>

@@ -80,7 +80,7 @@
             padding: 5%;
         }
 
-        .casos-open-title{
+        .casos-open-title {
             border-bottom: 2px solid var(--police-blue);
             margin-bottom: 20px;
             margin-left: 5%;
@@ -258,7 +258,7 @@
         }
 
         body {
-            background-color:#1a1a1a;
+            background-color: #1a1a1a;
             background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png');
             color: var(--ink);
             font-family: 'Times New Roman', Times, serif;
@@ -318,7 +318,7 @@
                 <div class="pj-card">
                     <img src="Dewis.jpg" alt="Agente" class="pj-photo">
                     <div class="pj-name">Dewis</div>
-                    <div class="pj-status">Gnomo ● Dewis</div>
+                    <div class="pj-status">Gnomo ● Mago</div>
                 </div>
 
                 <div class="pj-card">
@@ -348,43 +348,45 @@
         </div>
 
         <div class="main-grid">
-                <div class="casos-open-title">
-                    <h2>🚨 CASOS EM ABERTO</h2>
-                </div>
+            <div class="casos-open-title">
+                <h2>🚨 CASOS EM ABERTO</h2>
+            </div>
 
-                <div class="missao-box">
-                    <span class="stamp-alta">PRIORIDADE ALTA</span>
-                    <h3><strong>CONTRABANDO NO LAGO OESTE</strong></h3>
-                    <p><b>Relator:</b> Tenente Lavarsus</p>
-                    <p>Aparentemente os Goblins do Galix estão entrando em Absalom com madeira contrabandeada de Diobel. Só aceitamos madeira de Otari, do Consórcio Kortos.</p>
-                </div>
+            <div class="missao-box">
+                <span class="stamp-alta">PRIORIDADE ALTA</span>
+                <h3><strong>INVESTIGAR DESAPARECIDOS</strong></h3>
+                <p><b>Relator:</b> Tenente Lavarsus</p>
+                <p>Cinco pedreiros desapareceram ao mesmo tempo, há duas noites, no Pagode da Libélula. Vão ao local
+                    averiguar a situação</p>
+            </div>
 
-                <div class="missao-box">
-                    <span class="stamp-alta">PRIORIDADE ALTA</span>
-                    <h3><STRONG>AVERIGUAR LUTA CLANDESTINA</STRONG></h3>
-                    <p><b>Relator:</b> Tenente Lavarsus</p>
-                    <p>Aparentemente os Goblins do Galix estão realizando lutas clandestinas ao Noroeste do Bairro da Guardabeira. Averiguem a situação.</p>
-                </div>
+            <div class="missao-box">
+                <span class="stamp-media">PRIORIDADE MEDIA</span>
+                <h3><STRONG>AVERIGUAR LUTA CLANDESTINA</STRONG></h3>
+                <p><b>Relator:</b> Tenente Lavarsus</p>
+                <p>Aparentemente os Goblins do Galix estão realizando lutas clandestinas ao Noroeste do Bairro da
+                    Guardabeira. Averiguem a situação.</p>
+            </div>
         </div>
 
         <div class="main-grid">
-                <div class="casos-open-title">
-                    <h2>📁 CASOS ENCERRADOS</h2>
-                </div>
+            <div class="casos-open-title">
+                <h2>📁 CASOS ENCERRADOS</h2>
+            </div>
 
-                <div class="missao-box">
-                    <h3>CONFUSÃO NA TABERNA TENGU EMBRIAGADO</h3>
-                    <p><b>Relator:</b> Belfruta Samambaia</p>
-                    <p>Um grupo de baderneiros está causando confusão há dias no local. Vão ao recinto, apasiguar a
-                        situação de uma vez por todas.</p>
-                </div>
+            <div class="missao-box">
+                <h3>CONFUSÃO NA TABERNA TENGU EMBRIAGADO</h3>
+                <p><b>Relator:</b> Belfruta Samambaia</p>
+                <p>Um grupo de baderneiros está causando confusão há dias no local. Vão ao recinto, apasiguar a
+                    situação de uma vez por todas.</p>
+            </div>
 
-                <div class="missao-box">
-                    <h3>AVERIGUAR PEDÁGIO INDEVIDO</h3>
-                    <p><b>Relator:</b> Belfruta Samambaia</p>
-                    <p>Um grupo de baderneiros está causando confusão há dias no local. Vão ao recinto, apasiguar a
-                        situação de uma vez por todas.</p>
-                </div>
+            <div class="missao-box">
+                <h3>AVERIGUAR PEDÁGIO INDEVIDO</h3>
+                <p><b>Relator:</b> Belfruta Samambaia</p>
+                <p>Um grupo de baderneiros está causando confusão há dias no local. Vão ao recinto, apasiguar a
+                    situação de uma vez por todas.</p>
+            </div>
         </div>
 
         <footer>
@@ -392,6 +394,38 @@
             <i>Acesso via Intranet Mágica Protegida.</i>
         </footer>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
+    <script>
+        let buffer = "";
+const keyword = "galix";
+
+document.addEventListener('keydown', (e) => {
+    // Adiciona a tecla pressionada ao buffer
+    buffer += e.key.toLowerCase();
+
+    // Mantém o buffer apenas com o tamanho da palavra-chave para economizar memória
+    if (buffer.length > keyword.length) {
+        buffer = buffer.substring(buffer.length - keyword.length);
+    }
+
+    // Verifica se a palavra digitada é "galix"
+    if (buffer === keyword) {
+        const currentUrl = window.location.href;
+        
+        // Lógica de Redirecionamento
+        if (currentUrl.includes("galix.html")) {
+            window.location.href = "index.html"; // Volta para a principal
+        } else {
+            window.location.href = "galix.html"; // Vai para a secreta
+        }
+        
+        // Limpa o buffer após o acerto
+        buffer = "";
+    }
+});
+    </script>
 </body>
 
 </html>
